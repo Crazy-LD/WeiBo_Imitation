@@ -158,6 +158,9 @@ export default {
     }
   },
   async mounted () {
+    if (this.followeesInfos.length > 0) {
+      this.$refs.head_list.style.width = this.followeesInfos.length * 70 + 'px'
+    }
     await this.getWeiboContents(() => {
       this.$nextTick(() => {
         let headSwiper = new BScroll('.msite_head', {

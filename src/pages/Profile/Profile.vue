@@ -111,6 +111,7 @@ export default {
   mounted () {
     if (this.userInfo.avatar) {
       this.$refs.avatar.src = this.BASE_URL + this.userInfo.avatar
+      sessionStorage.setItem('access_token', true)
     }
   },
   computed: {
