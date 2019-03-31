@@ -2,7 +2,19 @@
 ## 项目简介
 
 这个项目是应学校课程考核要求，基于B/S架构的web app，其灵感来自于ios的微博和TIM，这个项目采用的是Vue + Express + Sequelize的技术栈，用于Vue初学者，学习和交流。
-##系统总架构
+## 项目运行
+```
+git clone https://github.com/Crazy-LD/WeiBo_Imitation.git
+
+cd WeiBo_Imitation
+
+npm install
+
+npm start
+
+访问http://localhost:8080
+```
+## 系统总架构
 
 <img src="./printscreen/framework.png" width="800" height="600"/>
 
