@@ -1,14 +1,16 @@
-##项目简介
+
+## 项目简介
+
 这个项目是应学校课程考核要求，基于B/S架构的web app，其灵感来自于ios的微博和TIM，这个项目采用的是Vue + Express + Sequelize的技术栈，用于Vue初学者，学习和交流。
 ##系统总架构
 
 <img src="./printscreen/framework.png" width="600" height="530"/>
 
-##后端代码
+## 后端代码
 
 [后端代码](https://github.com/crazyld)
 
-##功能
+## 功能
 
 - [x] 用户(管理员)登录
 - [x] 注册
@@ -19,11 +21,11 @@
 - [x] 点赞
 - [x] 评论
 
-##页面截图
+## 页面截图
 
 <img src="" width="300" height="530"/>
 
-##项目结构
+## 项目结构
 
 ```
 weibo_client
