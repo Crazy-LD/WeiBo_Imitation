@@ -45,6 +45,7 @@ export default {
       if (!weiBoText) return
       const result = await reqSendWeiBo(weiBoText)
       if (result.code === 0) {
+        console.log('来了')
         let weiBoContent = result.data
         this.$store.dispatch('addWeiBoContent', weiBoContent)
         this.$router.back()

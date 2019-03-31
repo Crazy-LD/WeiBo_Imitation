@@ -157,11 +157,11 @@ export default {
       }
     }
   },
-  async mounted () {
+  mounted () {
     if (this.followeesInfos.length > 0) {
       this.$refs.head_list.style.width = this.followeesInfos.length * 70 + 'px'
     }
-    await this.getWeiboContents(() => {
+    this.$store.dispatch('getWeiboContents', () => {
       this.$nextTick(() => {
         let headSwiper = new BScroll('.msite_head', {
           scrollX: true
@@ -169,7 +169,7 @@ export default {
         Vue.use(headSwiper)
       })
     })
-    await this.getFolloweesInfo(() => {
+    this.$store.dispatch('getFolloweesInfo', () => {
       this.$nextTick(() => {
         this.$refs.head_list.style.width = this.followeesInfos.length * 70 + 'px'
         let weiboScroll = new BScroll('.msite_container', {

@@ -12,6 +12,7 @@ export default new Vue({
   router,
   store
 })
+
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth) {
     if (sessionStorage.getItem('access_token')) {

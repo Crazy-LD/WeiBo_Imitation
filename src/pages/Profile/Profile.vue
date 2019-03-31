@@ -34,11 +34,11 @@
         </div>
       </div>
       <div class="profile_list">
-        <div class="list_item">
+        <!--<div class="list_item">
           <i class="iconfont icon-mianliuliangxiazai"></i>
           <span>免流量</span>
           <i class="iconfont icon-right"></i>
-        </div>
+        </div>-->
         <div class="list_item">
           <i class="iconfont icon-river_xx_cgx"></i>
           <span>草稿箱</span>
@@ -53,7 +53,7 @@
       <div class="profile_leave">
         <button class="leave_quit" @click="$router.push('/changepwd')">修改密码</button>
         <button class="leave_quit" @click="logout">退出</button>
-        <button class="leave_logout" @click="deleteUser">注销</button>
+        <button class="leave_logout" @click="deleteUser">删除用户</button>
       </div>
     </div>
   </section>
@@ -119,11 +119,13 @@ export default {
   },
   methods: {
     logout () {
+      if (!this.userInfo) return
       MessageBox.confirm('确定要退出吗？').then(() => {
         this.$store.dispatch('clearUserInfo')
       })
     },
     deleteUser () {
+      if (!this.userInfo) return
       const {userName, isManager} = this.userInfo
       MessageBox.confirm('确定要注销吗？').then(() => {
         if (isManager) {
@@ -156,7 +158,7 @@ export default {
     padding-top 45px
     background-color #F5F5F5
     height 100%
-    overflow auto
+    overflow hidden
     padding-bottom 50px
     .profile_head
       margin-top 10px

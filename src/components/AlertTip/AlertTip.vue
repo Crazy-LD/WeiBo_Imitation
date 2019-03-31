@@ -10,6 +10,7 @@
     </section>
   </div>
 </template>
+
 <script>
 export default {
   props: {
@@ -23,6 +24,7 @@ export default {
   }
 }
 </script>
+
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import '../../common/stylus/mixins.styl';
   @keyframes tipMove

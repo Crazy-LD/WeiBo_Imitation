@@ -74,6 +74,9 @@ export default {
   computed: {
     ...mapState(['userInfo'])
   },
+  mounted () {
+    this.getCaptcha()
+  },
   components: {
     AlertTip
   },

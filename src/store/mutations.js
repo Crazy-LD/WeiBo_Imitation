@@ -34,23 +34,24 @@ export default {
     state.userInfo = ''
   },
   [ADD_ONE_WEIBO] (state, {weiBoContent}) {
-    const {weiboContents, followeesInfos} = state
-    const {name, avatar} = state.userInfo
+    // const {weiboContents, followeesInfos} = state
+    const {weiboContents} = state
+    // const {name, avatar} = state.userInfo
     weiboContents.unshift(weiBoContent)
-    let hasUser = followeesInfos.forEach((value, index) => {
-      if (value.name === weiBoContent.name) {
-        return true
-      }
-      if (index === followeesInfos.length - 1) {
-        return false
-      }
-    })
-    if (!hasUser) {
-      followeesInfos.push({
-        name,
-        avatar
-      })
-    }
+    // let hasUser = followeesInfos.forEach((value, index) => {
+    //   if (value.name === weiBoContent.name) {
+    //     return true
+    //   }
+    //   if (index === followeesInfos.length - 1) {
+    //     return false
+    //   }
+    // })
+    // if (!hasUser) {
+    //   followeesInfos.push({
+    //     name,
+    //     avatar
+    //   })
+    // }
   },
   [CHANGE_ZAN] (state, {weiBoID, isZan}) {
     state.weiboContents.forEach((value, index) => {
@@ -79,11 +80,14 @@ export default {
     weiBoContent.weiBoComments.push(data)
   },
   [DELETE_WEIBO] (state, weiBoID) {
-    const {weiboContents} = state
+    const {weiboContents, currentContents} = state
     let weiBoContent = weiboContents.find(weiboContent => {
       return weiboContent.weiBoID === weiBoID
     })
     weiboContents.splice(weiboContents.indexOf(weiBoContent), 1)
+    if (currentContents.length === 0) {
+      state.currentContents = weiboContents
+    }
   },
   [RECEIVE_CURRENT_WEIBO] (state, name) {
     state.currentContents = state.weiboContents.filter(weiboContent => {
